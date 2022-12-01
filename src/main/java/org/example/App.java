@@ -16,13 +16,14 @@ public class App
     {
 
         Scanner scanner = new Scanner(System.in);
+        Pessoa pessoa = new Pessoa();
         System.out.println("Informe o nome");
-        String nome = scanner.next();
+        pessoa.nome = scanner.next();
         System.out.println("Informe o sobrenome");
-        String sobrenome = scanner.next();
+        pessoa.sobreNome = scanner.next();
         System.out.println("Informe a data de nascimento no padrão dd/MM/yyyy");
-        LocalDate dataNascimento = LocalDate.parse(scanner.next(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        System.out.printf("Olá meu nome %s %s tenho %d anos %n", nome, sobrenome,   dataNascimento.until(LocalDate.now(), ChronoUnit.YEARS));
+        pessoa.dataNascimento = LocalDate.parse(scanner.next(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        System.out.printf(pessoa.saudacao());
 
     }
 }
